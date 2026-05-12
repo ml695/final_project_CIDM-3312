@@ -9,5 +9,6 @@ public class Genre
     public string GenreDesc {get; set;} = string.Empty;
     [Display(Name = "Tag Name")]
     public string GenreName {get; set;} = string.Empty;
+    public string ImageURL {get; set;} = string.Empty;
     public List<GameGenre>? GameGenres = default!; // NP
 }

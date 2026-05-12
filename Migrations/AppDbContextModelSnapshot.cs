@@ -30,10 +30,6 @@ namespace final_project_CIDM_3312.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Protagonist")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -69,6 +65,10 @@ namespace final_project_CIDM_3312.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GenreName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

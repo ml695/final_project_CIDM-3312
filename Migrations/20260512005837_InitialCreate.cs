@@ -18,8 +18,7 @@ namespace final_project_CIDM_3312.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     GameName = table.Column<string>(type: "TEXT", nullable: false),
                     Protagonist = table.Column<string>(type: "TEXT", nullable: false),
-                    GameDesc = table.Column<string>(type: "TEXT", nullable: false),
-                    ImageURL = table.Column<string>(type: "TEXT", nullable: false)
+                    GameDesc = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,7 +32,8 @@ namespace final_project_CIDM_3312.Migrations
                     GenreID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     GenreDesc = table.Column<string>(type: "TEXT", nullable: false),
-                    GenreName = table.Column<string>(type: "TEXT", nullable: false)
+                    GenreName = table.Column<string>(type: "TEXT", nullable: false),
+                    ImageURL = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -8,7 +8,7 @@ public class Game
     public string GameName {get; set;} = string.Empty;
     public string Protagonist {get; set;} = string.Empty;
     public string GameDesc {get; set;} = string.Empty;
-    public string ImageURL {get; set;} = string.Empty;
+    //public string ImageURL {get; set;} = string.Empty;
     public List<GameGenre>? GameGenres = default!; // NP
 }
 

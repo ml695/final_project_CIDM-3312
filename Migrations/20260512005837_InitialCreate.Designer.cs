@@ -10,7 +10,7 @@ using final_project_CIDM_3312.Models;
 namespace final_project_CIDM_3312.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260509231033_InitialCreate")]
+    [Migration("20260512005837_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -30,10 +30,6 @@ namespace final_project_CIDM_3312.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GameName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -72,6 +68,10 @@ namespace final_project_CIDM_3312.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GenreName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
