@@ -1,0 +1,44 @@
+@page
+@model final_project_CIDM_3312.Pages_Genres.CreateModel
+
+        @{
+        ViewData["Title"] = "Create";
+        }
+        
+        <h1>Create</h1>
+        
+    <h4>Genre</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Genre.GenreDesc" class="control-label"></label>
+                <input asp-for="Genre.GenreDesc" class="form-control" />
+                <span asp-validation-for="Genre.GenreDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre.GenreName" class="control-label"></label>
+                <input asp-for="Genre.GenreName" class="form-control" />
+                <span asp-validation-for="Genre.GenreName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre.ImageURL" class="control-label"></label>
+                <input asp-for="Genre.ImageURL" class="form-control" />
+                <span asp-validation-for="Genre.ImageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

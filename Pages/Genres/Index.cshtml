@@ -1,0 +1,48 @@
+@page
+@model final_project_CIDM_3312.Pages_Genres.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre[0].GenreDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre[0].GenreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre[0].ImageURL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Genre) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageURL)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GenreID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GenreID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GenreID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
