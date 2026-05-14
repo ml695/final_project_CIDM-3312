@@ -38,7 +38,7 @@ namespace final_project_CIDM_3312.Pages_Genres
         {
             //Genre = await _context.Genres.ToListAsync();
 
-            var query = _context.Genres.Include(p => p.GameGenres!).ThenInclude(gg => gg.Game).Select(g => g);
+            var query = _context.Genres.Include(g => g.GameGenres!).ThenInclude(ga => ga.Game).Select(g => g);
 
             if (!string.IsNullOrEmpty(CurrentSearch))
             {

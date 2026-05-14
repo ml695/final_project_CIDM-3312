@@ -10,5 +10,5 @@ public class Genre
     [Display(Name = "Tag Name")]
     public string GenreName {get; set;} = string.Empty;
     public string ImageURL {get; set;} = string.Empty;
-    public List<GameGenre>? GameGenres = default!; // NP
+    public List<GameGenre>? GameGenres {get; set;} = default!; // NP
 }

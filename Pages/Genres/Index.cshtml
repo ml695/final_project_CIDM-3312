@@ -1,4 +1,5 @@
 @page
+@using Microsoft.AspNetCore.Razor.Language
 @model final_project_CIDM_3312.Pages_Genres.IndexModel
 
 @{
@@ -14,14 +15,20 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Genre[0].GenreDesc)
+                @Html.DisplayNameFor(model => model.Genre[0].ImageURL)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Genre[0].GenreName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre[0].ImageURL)
+                @Html.DisplayNameFor(model => model.Genre[0].GenreDesc)
             </th>
+            @foreach(var game in item.GameGenres)
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Game[0].GameDesc)
+                </th>
+            }
             <th></th>
         </tr>
     </thead>
@@ -29,13 +36,15 @@
 @foreach (var item in Model.Genre) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.GenreDesc)
+                <div class="col-6">
+                    <img class="img-fluid" src="@Html.DisplayFor(model => item.ImageURL)" alt="...">
+                </div>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GenreName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
+                @Html.DisplayFor(modelItem => item.GenreDesc)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.GenreID">Edit</a> |

@@ -10,7 +10,7 @@ using final_project_CIDM_3312.Models;
 namespace final_project_CIDM_3312.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260512005837_InitialCreate")]
+    [Migration("20260514061203_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

@@ -103,34 +103,36 @@ public static class SeedData
             return;
         }
 
-        context.Genres.AddRange(
-            new Genre{ GenreID = 1, GenreName = "Action", GenreDesc = "Fast-paced gameplay focused on combat, reflexes, and real-time challenges." },
-            new Genre{ GenreID = 2, GenreName = "Adventure", GenreDesc = "Story-driven gameplay emphasizing exploration, puzzles, and narrative progression." },
-            new Genre{ GenreID = 3, GenreName = "Role-Playing", GenreDesc = "Character progression, quests, and stat-based gameplay in immersive worlds." },
-            new Genre{ GenreID = 4, GenreName = "First-Person Shooter", GenreDesc = "Combat-focused games played from the protagonist's first-person perspective." },
-            new Genre{ GenreID = 5, GenreName = "Third-Person Shooter", GenreDesc = "Shooter games featuring an over-the-shoulder or external player viewpoint." },
-            new Genre{ GenreID = 6, GenreName = "Strategy", GenreDesc = "Games requiring tactical planning, resource management, and decision-making." },
-            new Genre{ GenreID = 7, GenreName = "Real-Time Strategy", GenreDesc = "Strategy games where actions occur continuously without turn-based pauses." },
-            new Genre{ GenreID = 8, GenreName = "Turn-Based Strategy", GenreDesc = "Strategic gameplay where players take actions in alternating turns." },
-            new Genre{ GenreID = 9, GenreName = "Simulation", GenreDesc = "Games designed to realistically imitate activities, systems, or environments." },
-            new Genre{ GenreID = 10, GenreName = "Sports", GenreDesc = "Games based on real or fictional sports competitions and athletic activities." },
-            new Genre{ GenreID = 11, GenreName = "Racing", GenreDesc = "Vehicle-focused games centered on speed, driving skill, and competition." },
-            new Genre{ GenreID = 12, GenreName = "Puzzle", GenreDesc = "Games that challenge logic, pattern recognition, and problem-solving abilities." },
-            new Genre{ GenreID = 13, GenreName = "Platformer", GenreDesc = "Games involving jumping between platforms and navigating obstacle-filled levels." },
-            new Genre{ GenreID = 14, GenreName = "Survival", GenreDesc = "Gameplay focused on resource gathering, crafting, and staying alive in hostile conditions." },
-            new Genre{ GenreID = 15, GenreName = "Horror", GenreDesc = "Games intended to create fear, tension, and suspenseful experiences." },
-            new Genre{ GenreID = 16, GenreName = "Stealth", GenreDesc = "Gameplay emphasizing avoiding detection and silently overcoming obstacles or enemies." },
-            new Genre{ GenreID = 17, GenreName = "Open World", GenreDesc = "Games featuring large, freely explorable environments with non-linear objectives." },
-            new Genre{ GenreID = 18, GenreName = "Sandbox", GenreDesc = "Games allowing creative freedom and experimentation with minimal restrictions." },
-            new Genre{ GenreID = 19, GenreName = "Multiplayer Online Battle Arena", GenreDesc = "Team-based competitive games focused on strategic battles between player-controlled heroes." },
-            new Genre{ GenreID = 20, GenreName = "Battle Royale", GenreDesc = "Large-scale survival competition where players fight until only one remains." },
-            new Genre{ GenreID = 21, GenreName = "Massively Multiplayer Online", GenreDesc = "Online games supporting large numbers of players in persistent virtual worlds." },
-            new Genre{ GenreID = 22, GenreName = "Card Game", GenreDesc = "Games based on collectible, strategic, or deck-building card mechanics." },
-            new Genre{ GenreID = 23, GenreName = "Party Games", GenreDesc = "Multiplayer-focused games designed for social gatherings, featuring mini-games, competitions, or cooperative fun." },
-            new Genre{ GenreID = 24, GenreName = "Fighting", GenreDesc = "Combat-focused games where players battle opponents using martial arts, weapons, or special abilities in competitive matches." },
-            new Genre{ GenreID = 25, GenreName = "Roguelike", GenreDesc = "Games featuring procedural generation, permadeath, and highly replayable mechanics." }
-        );
+        List<Genre> genres = new List<Genre>
+        {
+            new Genre{ GenreID = 1, GenreName = "Action", GenreDesc = "Fast-paced gameplay focused on combat, reflexes, and real-time challenges.", ImageURL = "img/action.jpg" },
+            new Genre{ GenreID = 2, GenreName = "Adventure", GenreDesc = "Story-driven gameplay emphasizing exploration, puzzles, and narrative progression.", ImageURL = "img/adventure.jpg" },
+            new Genre{ GenreID = 3, GenreName = "Role-Playing", GenreDesc = "Character progression, quests, and stat-based gameplay in immersive worlds.", ImageURL = "img/role-playing.jpg" },
+            new Genre{ GenreID = 4, GenreName = "First-Person Shooter", GenreDesc = "Combat-focused games played from the protagonist's first-person perspective.", ImageURL = "img/first-person shooter.jpg" },
+            new Genre{ GenreID = 5, GenreName = "Third-Person Shooter", GenreDesc = "Shooter games featuring an over-the-shoulder or external player viewpoint.", ImageURL = "img/third-person shooter.jpg" },
+            new Genre{ GenreID = 6, GenreName = "Strategy", GenreDesc = "Games requiring tactical planning, resource management, and decision-making.", ImageURL = "img/strategy.jpg" },
+            new Genre{ GenreID = 7, GenreName = "Real-Time Strategy", GenreDesc = "Strategy games where actions occur continuously without turn-based pauses.", ImageURL = "img/real-time strategy.jpg" },
+            new Genre{ GenreID = 8, GenreName = "Turn-Based Strategy", GenreDesc = "Strategic gameplay where players take actions in alternating turns.", ImageURL = "img/turn-based strategy.jpg" },
+            new Genre{ GenreID = 9, GenreName = "Simulation", GenreDesc = "Games designed to realistically imitate activities, systems, or environments.", ImageURL = "img/simulator.jpg" },
+            new Genre{ GenreID = 10, GenreName = "Sports", GenreDesc = "Games based on real or fictional sports competitions and athletic activities.", ImageURL = "img/sports.jpg" },
+            new Genre{ GenreID = 11, GenreName = "Racing", GenreDesc = "Vehicle-focused games centered on speed, driving skill, and competition.", ImageURL = "img/racing.jpg" },
+            new Genre{ GenreID = 12, GenreName = "Puzzle", GenreDesc = "Games that challenge logic, pattern recognition, and problem-solving abilities.", ImageURL = "img/puzzle.webp" },
+            new Genre{ GenreID = 13, GenreName = "Platformer", GenreDesc = "Games involving jumping between platforms and navigating obstacle-filled levels.", ImageURL = "img/platformer.jpg" },
+            new Genre{ GenreID = 14, GenreName = "Survival", GenreDesc = "Gameplay focused on resource gathering, crafting, and staying alive in hostile conditions.", ImageURL = "img/survival.jpg" },
+            new Genre{ GenreID = 15, GenreName = "Horror", GenreDesc = "Games intended to create fear, tension, and suspenseful experiences.", ImageURL = "img/horror.webp" },
+            new Genre{ GenreID = 16, GenreName = "Stealth", GenreDesc = "Gameplay emphasizing avoiding detection and silently overcoming obstacles or enemies.", ImageURL = "img/stealth.jpg" },
+            new Genre{ GenreID = 17, GenreName = "Open World", GenreDesc = "Games featuring large, freely explorable environments with non-linear objectives.", ImageURL = "img/open world.png" },
+            new Genre{ GenreID = 18, GenreName = "Sandbox", GenreDesc = "Games allowing creative freedom and experimentation with minimal restrictions.", ImageURL = "img/sandbox.webp" },
+            new Genre{ GenreID = 19, GenreName = "Multiplayer Online Battle Arena", GenreDesc = "Team-based competitive games focused on strategic battles between player-controlled heroes.", ImageURL = "img/mmo.jpg" },
+            new Genre{ GenreID = 20, GenreName = "Battle Royale", GenreDesc = "Large-scale survival competition where players fight until only one remains.", ImageURL = "img/battle royale.jpg" },
+            new Genre{ GenreID = 21, GenreName = "Massively Multiplayer Online", GenreDesc = "Online games supporting large numbers of players in persistent virtual worlds.", ImageURL = "img/mmo.jpg" },
+            new Genre{ GenreID = 22, GenreName = "Card Game", GenreDesc = "Games based on collectible, strategic, or deck-building card mechanics.", ImageURL = "img/card game.avif" },
+            new Genre{ GenreID = 23, GenreName = "Party Games", GenreDesc = "Multiplayer-focused games designed for social gatherings, featuring mini-games, competitions, or cooperative fun.", ImageURL = "img/party game.avif" },
+            new Genre{ GenreID = 24, GenreName = "Fighting", GenreDesc = "Combat-focused games where players battle opponents using martial arts, weapons, or special abilities in competitive matches.", ImageURL = "img/fighting.png" },
+            new Genre{ GenreID = 25, GenreName = "Roguelike", GenreDesc = "Games featuring procedural generation, permadeath, and highly replayable mechanics.", ImageURL = "img/roguelike.jpg" }
+        };
 
+        context.AddRange(genres);
         context.SaveChanges();
 
         List<GameGenre> gameGenres = new List<GameGenre>
