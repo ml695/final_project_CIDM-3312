@@ -1,6 +1,4 @@
 @page
-@using Microsoft.AspNetCore.Razor.Language
-@using final_project_CIDM_3312.Models
 @model final_project_CIDM_3312.Pages_Genres.IndexModel
 
 @{
@@ -37,8 +35,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Genre[0].GenreDesc)
             </th>
-
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre[0].GameGenres)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -55,11 +54,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.GenreDesc)
             </td>
-            @foreach(var game in item.GameGenres!)
+            @foreach (var game in item.GameGenres!)
             {
-                <td>
-                    @Html.DisplayFor(modelItem => game.Game.GameName)
-                </td>
+                @game.Game.GameName <br />
+            }
+            @if (item.GameGenres.Count == 0)
+            {
+                @:No Games
             }
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.GenreID">Edit</a> |
@@ -70,3 +71,25 @@
 }
     </tbody>
 </table>
+
+<hr />
+@{
+    // If we are on page 1, prevDisabled will be set to the "disabled" class
+    // otherwise, it will be empty. So our previous button will be enabled or disabled based on this logic
+    var prevDisabled = "";
+    var nextDisabled = "";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+    if (Model.PageNum >= Model.TotalPages)
+    {
+        nextDisabled = "disabled";
+    }
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    </ul>
+</nav>
