@@ -1,5 +1,6 @@
 @page
 @using Microsoft.AspNetCore.Razor.Language
+@using final_project_CIDM_3312.Models
 @model final_project_CIDM_3312.Pages_Genres.IndexModel
 
 @{
@@ -11,6 +12,11 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<span class="input-group-text"><i class="bi bi-search"></i></span>
+<input class="form-control me-2" type="search" name="CurrentSearch" value="@Model.CurrentSearch" placeholder="Search" aria-label="Search">
+<button class="btn btn-outline-success" type="submit">Search</button>
+
 <table class="table">
     <thead>
         <tr>
@@ -18,17 +24,20 @@
                 @Html.DisplayNameFor(model => model.Genre[0].ImageURL)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre[0].GenreName)
+                @{
+                    //Alternate sort order
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.Genre[0].GenreName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Genre[0].GenreDesc)
             </th>
-            @foreach(var game in item.GameGenres)
-            {
-                <th>
-                    @Html.DisplayNameFor(model => model.Game[0].GameDesc)
-                </th>
-            }
+
             <th></th>
         </tr>
     </thead>
@@ -46,6 +55,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.GenreDesc)
             </td>
+            @foreach(var game in item.GameGenres!)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => game.Game.GameName)
+                </td>
+            }
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.GenreID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.GenreID">Details</a> |
